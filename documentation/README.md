@@ -1,1 +1,1 @@
-# Project design files and documentation directory
+# Project general documentation directory
