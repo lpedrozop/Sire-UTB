@@ -1,0 +1,42 @@
+{
+  "name": "api_form_sire",
+  "version": "1.0.0",
+  "description": "Api encargada de gestionar las reservas de SiRe, desarrollada en Nodejs con Express y conexión a base de datos Mysql",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest --forceExit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lpedrozop/Api_Form_Sire.git"
+  },
+  "keywords": [
+    "api",
+    "node",
+    "azure-ad",
+    "form-sire"
+  ],
+  "author": "Lucas M. Pedrozo P.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lpedrozop/Api_Form_Sire/issues"
+  },
+  "homepage": "https://github.com/lpedrozop/Api_Form_Sire#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.2.0",
+    "moment": "^2.30.1",
+    "moment-timezone": "^0.5.45",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.9.4",
+    "passport": "^0.7.0",
+    "passport-azure-ad": "^4.3.5",
+    "resend": "^3.2.0",
+    "uuid": "^9.0.1"
+  }
+}

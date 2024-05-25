@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprobación de Reserva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #4CAF50, #2196F3);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .content {
+            padding: 20px;
+            color: #333;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="header">
+        <h2>Aprobación de Reserva</h2>
+    </div>
+    <div class="content">
+        <p>Hola [Nombre_Prof],</p>
+        <p>Se ha realizado una nueva reserva para la materia [Materia] que requiere tu aprobación. Por favor, revisa la información de la reserva y apruébala si es correcta.</p>
+        <p><strong>Detalles de la Reserva:</strong></p>
+        <ul>
+            <li><strong>Materia:</strong> [Materia]</li>
+            <li><strong>Fecha:</strong> [Fecha]</li>
+            <li><strong>Hora de Inicio:</strong> [HoraInicio]</li>
+            <li><strong>Hora de Fin:</strong> [HoraFin]</li>
+            <li><strong>Lugar:</strong> [Lugar]</li>
+        </ul>
+        <p>Por favor, aprueba o rechaza la reserva haciendo clic en el siguiente botón:</p>
+        <a href="[EnlaceAprobacion]" class="button">Aprobar Reserva</a>
+    </div>
+    <div class="footer">
+        <p>Reserva de,<br>[Nombre]</p>
+    </div>
+</div>
+</body>
+
+</html>

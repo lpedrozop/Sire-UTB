@@ -1,0 +1,38 @@
+{
+  "name": "api_prof_sire",
+  "version": "1.0.0",
+  "description": "Esta Api estará encargada de los servicios directos relacionados al usuario profesor",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest --forceExit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lpedrozop/Api_Profe_Sire.git"
+  },
+  "keywords": [
+    "Api",
+    "Express",
+    "Nodejs",
+    "MySql"
+  ],
+  "author": "Lucas M Pedrozo P",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lpedrozop/Api_Profe_Sire/issues"
+  },
+  "homepage": "https://github.com/lpedrozop/Api_Profe_Sire#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.2.0",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.9.7",
+    "passport": "^0.7.0",
+    "passport-azure-ad": "^4.3.5"
+  }
+}
