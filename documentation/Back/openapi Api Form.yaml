@@ -1,0 +1,172 @@
+openapi: 3.0.0
+info:
+  title: API FORM
+  version: 1.0.0
+servers:
+  - url: https://www.sire.software/form
+paths:
+  /materia:
+    get:
+      summary: Devuelve todas las materias que se dan en la universidad
+      responses:
+        '200':
+          description: Materias recuperadas exitosamente
+          content:
+            application/json:
+              example:
+                materias:
+                  - MATEMÁTICAS
+                  - FÍSICA
+                  - QUIMÍCA
+
+  /profesor/{id}:
+    get:
+      summary: Devuelve los nombres de los profesores que imparten una materia específica
+      parameters:
+        - in: path
+          name: id
+          description: Nombre de la materia (debe estar codificado)
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Nombres de los profesores recuperados exitosamente
+          content:
+            application/json:
+              example:
+                - PROFESOR A
+                - PROFESOR B
+
+  /bloque/{id}:
+    get:
+      summary: Devuelve los espacios de un campus específico (TE y MA)
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Espacios obtenidos en base al campus TE y MA
+          content:
+            application/json:
+              example:
+                - EDA1
+                - EDA2
+
+  /validate:
+    post:
+      summary: Devuelve los espacios disponibles y parcialmente disponibles para una reserva
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              Campus: "TE"
+              Bloque: "EDA2"
+              Hora_ini: "08:00"
+              Hora_fin: "10:00"
+              Fecha: "2024-04-30"
+      responses:
+        '200':
+          description: Espacios disponibles y parcialmente disponibles recuperados exitosamente
+          content:
+            application/json:
+              example:
+                aulas:
+                  Disponibles:
+                    - Salon: "A2-107"
+                      Tipo: "Aulas"
+                      Capacidad: 22
+                      Equipos_Tec: "Equipos de computo"
+                    - Salon: "LBIM12"
+                      Tipo: "Aulas"
+                      Capacidad: 20
+                      Equipos_Tec: "Equipos de computo, Video Beam"
+                    - Salon: "LBIM8"
+                      Tipo: "Aulas"
+                      Capacidad: 20
+                      Equipos_Tec: "Equipos de computo"
+                    - Salon: "LBIN3"
+                      Tipo: "Aulas"
+                      Capacidad: 23
+                      Equipos_Tec: "Equipos de computo"
+                  Parcial_Disponibilidad:
+                    - Salon: "A2-104"
+                      Tipo: "Aulas"
+                      Capacidad: 20
+                      Equipos_Tec: "Equipos de computo, Video Beam"
+  /create_reser:
+    post:
+      summary: Crea una nueva reserva
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              Nombre: "PEDROZO PERTUZ LUCAS"
+              Codigo: "T00061228"
+              Correo: "lpedrozo@sire.software"
+              Tipo_Res: "Academica"
+              Materia: "NEGOCIOS INCLUSIVOS"
+              Nombre_Prof: "ROMAN MELENDEZ GABRIEL"
+              Campus: "TE"
+              Bloque: "EDA2"
+              Hora_ini: "08:00"
+              Hora_fin: "10:00"
+              Fecha: "2024-05-01"
+              Salon: "A2-404"
+              Capacidad: 20
+              Motivo: "Prueba de integración final en Endpoint Cloud"
+      responses:
+        '200':
+          description: Reserva creada exitosamente
+          content:
+            application/json:
+              example:
+                message: "Reserva creada exitosamente"
+                reserva:
+                  ID_Reserva: "123456789"
+                  ID_Espacio: "EDA2-A2-404"
+                  Fh_Ini: "2024-05-01 08:00:00"
+                  Fh_Fin: "2024-05-01 10:00:00"
+
+  /cancel_reser/{id}:
+    patch:
+      summary: Cancela una reserva en base al ID de la reserva
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Reserva cancelada exitosamente
+          content:
+            application/json:
+              example:
+                message: "Reserva cancelada con éxito"
+
+  /getAll:
+    get:
+      summary: Devuelve todas las reservas de un usuario
+      responses:
+        '200':
+          description: Reservas del usuario recuperadas exitosamente
+          content:
+            application/json:
+              example:
+                - ID_Reserva: "00038653-afc8-4c6a-bfc5-6298fe529ac0"
+                  ID_User: "T00061228"
+                  ID_Espacio: "EDA2-A2-107"
+                  Tipo_Res: "Academica"
+                  Fh_Ini: "2024-04-26T17:00:00.000Z"
+                  Fh_Fin: "2024-04-26T18:00:00.000Z"
+                  Estado: "Pendiente"
+                  Apr_Doc: "Pendiente"
+                  Motivo: "Prueba de integración"
+                  Aforo: 20
+                  ID_Prof_Mat: "T00019393-AEMP-O06A"

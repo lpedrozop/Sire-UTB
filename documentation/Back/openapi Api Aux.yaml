@@ -1,0 +1,100 @@
+openapi: 3.0.0
+info:
+  title: API AUX
+  version: 1.0.0
+servers:
+  - url: https://www.sire.software/aux
+paths:
+  /espaciosaux:
+    get:
+      summary: Obtener espacios asignados al auxiliar
+      description: Devuelve todos los espacios donde hay una reserva o una clase que estén asignados al auxiliar.
+      tags:
+        - Auxiliar
+      responses:
+        '200':
+          description: Espacios asignados obtenidos exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Reservas:
+                    type: array
+                    items:
+                      type: object
+                  Clases_regulares:
+                    type: array
+                    items:
+                      type: object
+        '400':
+          description: No cuenta con espacios asignados actualmente
+        '403':
+          description: No cuenta con los permisos requeridos para la obtención de datos
+        '500':
+          description: Error interno del servidor
+
+  /reporte:
+    post:
+      summary: Crear un reporte de una reserva o una clase regular
+      description: Crea un reporte de una reserva o una clase regular.
+      tags:
+        - Reportes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ID_Reserva:
+                  type: string
+                  nullable: true
+                ID_Horario:
+                  type: string
+                  nullable: true
+                Pre_Reporte:
+                  type: integer
+                  enum: [0, 1]
+                Descripcion:
+                  type: string
+                  nullable: true
+              required:
+                - Pre_Reporte
+      responses:
+        '200':
+          description: Reporte creado correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Estado:
+                    type: string
+        '400':
+          description: Error en la solicitud
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        '403':
+          description: No cuenta con los permisos requeridos para la obtención de datos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string

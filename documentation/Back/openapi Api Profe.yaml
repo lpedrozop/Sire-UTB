@@ -1,0 +1,165 @@
+openapi: 3.0.0
+info:
+  title: API PROFE
+  version: 1.0.0
+servers:
+  - url: https://www.sire.software/profe
+    description: Servidor de producción
+paths:
+  /reserva_profe:
+    get:
+      summary: Obtener reservas asociadas a un docente
+      description: Devuelve todas las reservas pendientes de aprobación o rechazo asociadas a un docente.
+      tags:
+        - Reservas
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Reservas obtenidas exitosamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    ID_Reserva:
+                      type: string
+                    Aula:
+                      type: string
+                    Estado:
+                      type: string
+                    "Tipo de reserva":
+                      type: string
+                    Motivo:
+                      type: string
+                    Estudiante:
+                      type: string
+                    Materia:
+                      type: string
+        '404':
+          description: No se encontraron reservas pendientes para aprobar o rechazar
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '403':
+          description: No cuenta con los permisos requeridos para la obtención de datos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+  '/estado_reserva/{id}':
+      patch:
+        summary: Cambiar estado de una reserva
+        description: Cambia el estado de una reserva identificada por su ID.
+        tags:
+          - Reservas
+        security:
+          - bearerAuth: []
+        parameters:
+          - in: path
+            name: id
+            required: true
+            schema:
+              type: string
+        requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Estado:
+                    type: string
+        responses:
+          '200':
+            description: Estado de la reserva actualizado con éxito
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    message:
+                      type: string
+          '400':
+            description: Error al cambiar el estado de la reserva
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    message:
+                      type: string
+          '403':
+            description: No cuenta con los permisos requeridos para la actualización del estado de la reserva
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    error:
+                      type: string
+  /historial:
+    get:
+      summary: Obtener historial de reservas del docente
+      description: Devuelve el historial de reservas aprobadas, rechazadas o canceladas de un docente.
+      tags:
+        - Reservas
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Historial de reservas obtenido exitosamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    ID_Reserva:
+                      type: string
+                    Aula:
+                      type: string
+                    Estado:
+                      type: string
+                    "Tipo de reserva":
+                      type: string
+                    Motivo:
+                      type: string
+                    Estudiante:
+                      type: string
+                    Materia:
+                      type: string
+        '404':
+          description: No cuenta con un historial de reservas asociadas
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        '403':
+          description: No cuenta con los permisos requeridos para la obtención de datos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

@@ -1,0 +1,809 @@
+openapi: 3.0.0
+info:
+  title: API ADMIN
+  version: 1.0.0
+servers:
+  - url: https://www.sire.software/admin
+paths:
+  /getall_aux:
+    get:
+      summary: Obtener todos los usuarios auxiliares administrativos
+      responses:
+        '200':
+          description: Lista de todos los usuarios auxiliares administrativos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Auxiliares:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Usuario'
+        '403':
+          description: No tiene permisos suficientes para acceder a este recurso
+        '500':
+          description: Error interno del servidor
+  /auxiliares:
+    get:
+      summary: Obtener auxiliares asignados y no asignados
+      responses:
+        '200':
+          description: Lista de auxiliares asignados y no asignados
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Aux_Asignados:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AuxiliarAsignado'
+                  Aux_NoAsignados:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AuxiliarNoAsignado'
+        '403':
+          description: No tiene permisos suficientes para acceder a este recurso
+        '500':
+          description: Error interno del servidor
+  /create_aux:
+    post:
+      summary: Crear un nuevo usuario auxiliar
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ID_User:
+                  type: string
+                  description: ID del usuario (debe incluir T000)
+                Nombre:
+                  type: string
+                  description: Nombre del usuario auxiliar
+              example:
+                ID_User: "T00012345"
+                Nombre: "MARTINEZ RACERO MATEO"
+      responses:
+        '200':
+          description: Usuario auxiliar creado correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Usuario auxiliar creado correctamente
+        '400':
+          description: Error en los parámetros de entrada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Debe proporcionar el ID del usuario y el nombre del usuario
+        '403':
+          description: No tiene permisos suficientes para acceder a este recurso
+        '500':
+          description: Error interno del servidor
+  /asignar_aux:
+    post:
+      summary: Asignar bloque horario a un auxiliar
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ID_User:
+                  type: string
+                  description: ID del usuario (debe incluir T000)
+                Bloque_L_V:
+                  type: string
+                  description: Bloque horario de lunes a viernes (opcional)
+                Bloque_S:
+                  type: string
+                  description: Bloque horario del sábado (opcional)
+                Lunes:
+                  type: string
+                  description: Hora de asignación del lunes (opcional)
+                Martes:
+                  type: string
+                  description: Hora de asignación del martes (opcional)
+                Miércoles:
+                  type: string
+                  description: Hora de asignación del miércoles (opcional)
+                Jueves:
+                  type: string
+                  description: Hora de asignación del jueves (opcional)
+                Viernes:
+                  type: string
+                  description: Hora de asignación del viernes (opcional)
+                Sábado:
+                  type: string
+                  description: Hora de asignación del sábado (opcional)
+              example:
+                ID_User: "T00012345"
+                Bloque_L_V: "08:00-16:00"
+                Lunes: "08:00-12:00"
+                Sábado: "08:00-14:00"
+      responses:
+        '200':
+          description: Asignación de bloque al auxiliar realizada correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Asignación de bloque al auxiliar realizada correctamente
+        '400':
+          description: Error en los parámetros de entrada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: El código de usuario no es válido. Debe incluir T000
+        '403':
+          description: No tiene permisos suficientes para acceder a este recurso
+        '500':
+          description: Error interno del servidor
+  /delete_asignacion/{id}:
+    delete:
+      summary: Eliminar una asignación específica del auxiliar
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: ID de la asignación a eliminar
+      responses:
+        '200':
+          description: Asignación eliminada correctamente para el usuario
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Asignación eliminada correctamente para el usuario
+                  id:
+                    type: string
+                    example: T00012345
+        '400':
+          description: Error en los parámetros de entrada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: El ID de la reserva es requerido
+        '403':
+          description: No tiene permisos suficientes para acceder a este recurso
+        '500':
+          description: Error interno del servidor
+
+  /delete_asignaciones/{id}:
+    delete:
+      summary: Eliminar todas las asignaciones de un usuario auxiliar
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: ID del usuario auxiliar (debe incluir T000)
+      responses:
+        '200':
+          description: Asignaciones eliminadas correctamente para el usuario
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Asignaciones eliminadas correctamente para el usuario
+                  id:
+                    type: string
+                    example: T00012345
+        '400':
+          description: Error en los parámetros de entrada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: El código de usuario no es válido. Debe incluir T000
+        '403':
+          description: No tiene permisos suficientes para acceder a este recurso
+        '500':
+          description: Error interno del servidor
+
+  /delete_aux/{id}:
+    delete:
+      summary: Eliminar un usuario auxiliar
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: ID del usuario auxiliar (debe incluir T000)
+      responses:
+        '200':
+          description: Usuario auxiliar eliminado correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Usuario auxiliar eliminado correctamente
+        '400':
+          description: Error en los parámetros de entrada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: El código de usuario no es válido. Debe incluir T000
+        '403':
+          description: No tiene permisos suficientes para acceder a este recurso
+        '500':
+          description: Error interno del servidor
+  /get_espacios:
+    get:
+      summary: Obtener todos los espacios
+      responses:
+        '200':
+          description: Respuesta exitosa
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Espacios_Total:
+                    type: array
+                    items:
+                      type: object
+        '403':
+          description: No tiene permisos suficientes para acceder a este recurso
+        '500':
+          description: Error interno del servidor
+
+  /espacios:
+    get:
+      summary: Obtener espacios disponibles y no disponibles
+      responses:
+        '200':
+          description: Respuesta exitosa
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Espacios_Disponibles:
+                    oneOf:
+                      - type: array
+                        items:
+                          type: object
+                            
+                      - type: string
+                        example: No hay espacios disponibles para ser reservados
+                  Espacios_NoDisponibles:
+                    oneOf:
+                      - type: array
+                        items:
+                          type: object
+                          
+                      - type: string
+                        example: Todos los espacios están disponibles para ser reservados
+        '403':
+          description: No tiene permisos suficientes para acceder a este recurso
+        '500':
+          description: Error interno del servidor
+
+  /cambiar_est_esp/{id}:
+    patch:
+      summary: Cambiar el estado de disponibilidad de un espacio
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: ID del espacio a modificar en la base de datos
+        - in: query
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              Disponibilidad:
+                type: integer
+                example: 0
+          description: 0 para no disponible, 1 para disponible
+      responses:
+        '200':
+          description: Estado del espacio cambiado correctamente
+        '400':
+          description: Error en los parámetros de entrada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Debe proporcionar todos los campos
+        '403':
+          description: No tiene permisos suficientes para acceder a este recurso
+        '500':
+          description: Error interno del servidor
+
+  /get_bloques/{id}:
+    get:
+      summary: Obtener bloques disponibles para un campus específico
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: ID del campus
+      responses:
+        '200':
+          description: Respuesta exitosa
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Bloques:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        Bloque:
+                          type: string
+                          example: EDA1
+        '403':
+          description: No tiene permisos suficientes para acceder a este recurso
+        '500':
+          description: Error interno del servidor
+          
+  /get_reservas:
+    get:
+      summary: Obtener todas las reservas
+      description: Retorna todas las reservas académicas y no académicas.
+      tags:
+        - Reservas
+      responses:
+        '200':
+          description: Lista de reservas
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Reservas_Aca:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ReservaAcademica'
+                  Reservas_NAca:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ReservaNoAcademica'
+        '403':
+          description: No tiene permisos suficientes para acceder a este recurso
+        '500':
+          description: Error interno del servidor
+  /cambiar_estado/{id}:
+    patch:
+      summary: Cambiar el estado de una reserva
+      description: Cambia el estado de una reserva a "Aprobada" o "Rechazada".
+      tags:
+        - Reservas
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: ID de la reserva
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Estado:
+                  type: string
+                  enum: [Aprobada, Rechazada]
+      responses:
+        '200':
+          description: Estado de la reserva modificado correctamente
+        '400':
+          description: Error en la solicitud
+        '403':
+          description: No tiene permisos suficientes para acceder a este recurso
+        '500':
+          description: Error interno del servidor
+  /valide:
+    post:
+      summary: Validar espacios disponibles
+      description: Valida los espacios disponibles basados en horarios, campus y aforo.
+      tags:
+        - Espacios
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Lunes:
+                  type: string
+                Martes:
+                  type: string
+                Miércoles:
+                  type: string
+                Jueves:
+                  type: string
+                Viernes:
+                  type: string
+                Sábado:
+                  type: string
+                Campus:
+                  type: string
+                Aforo:
+                  type: integer
+      responses:
+        '200':
+          description: Aulas disponibles
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  aulas:
+                    type: object
+                    properties:
+                      Disponibles:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Espacio'
+        '400':
+          description: Error en la solicitud
+        '403':
+          description: No tiene permisos suficientes para acceder a este recurso
+        '500':
+          description: Error interno del servidor
+  /create_clase:
+    post:
+      summary: Crear una nueva clase
+      description: Crea una nueva clase para un monitor en un espacio específico.
+      tags:
+        - Espacios
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Lunes:
+                  type: string
+                Martes:
+                  type: string
+                Miércoles:
+                  type: string
+                Jueves:
+                  type: string
+                Viernes:
+                  type: string
+                Sábado:
+                  type: string
+                ID_User:
+                  type: string
+                ID_Espacio:
+                  type: string
+                Fecha_Inicio:
+                  type: string
+                  format: date
+                Fecha_Fin:
+                  type: string
+                  format: date
+      responses:
+        '200':
+          description: Asignación de aula creada con éxito
+        '400':
+          description: Error en la solicitud
+        '403':
+          description: No tiene permisos suficientes para acceder a este recurso
+        '500':
+          description: Error interno del servidor
+          
+  /reporte/uso_espacio_clase:
+    get:
+      summary: Generar reporte de uso de espacio en clases
+      description: Genera un informe sobre el uso de espacio en clases.
+      tags:
+        - Reportes
+      responses:
+        '200':
+          description: Informe generado exitosamente
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '403':
+          description: No tiene permisos suficientes para acceder a este recurso
+        '500':
+          description: Error interno del servidor
+
+  /reporte/uso_espacio_reserva:
+    post:
+      summary: Generar reporte de uso de espacio en reservas
+      description: Genera un informe sobre el uso de espacio en reservas entre las fechas proporcionadas.
+      tags:
+        - Reportes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Fecha_Inicio:
+                  type: string
+                  format: date
+                Fecha_Fin:
+                  type: string
+                  format: date
+      responses:
+        '200':
+          description: Informe generado exitosamente
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: Error en la solicitud
+        '403':
+          description: No tiene permisos suficientes para acceder a este recurso
+        '500':
+          description: Error interno del servidor
+
+  /reporte/num_reserva:
+    post:
+      summary: Generar reporte del número de reservas
+      description: Genera un informe sobre el número de reservas entre las fechas proporcionadas.
+      tags:
+        - Reportes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Fecha_Inicio:
+                  type: string
+                  format: date
+                Fecha_Fin:
+                  type: string
+                  format: date
+      responses:
+        '200':
+          description: Informe generado exitosamente
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: Error en la solicitud
+        '403':
+          description: No tiene permisos suficientes para acceder a este recurso
+        '500':
+          description: Error interno del servidor
+
+  /reporte/horas_trabajadas:
+    get:
+      summary: Generar reporte del número de horas trabajadas por auxiliares
+      description: Genera un informe sobre el número de horas trabajadas por auxiliares.
+      tags:
+        - Reportes
+      responses:
+        '200':
+          description: Informe generado exitosamente
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '403':
+          description: No tiene permisos suficientes para acceder a este recurso
+        '500':
+          description: Error interno del servidor
+
+  /reporte/dash:
+    post:
+      summary: Generar reporte con filtro para el dashboard
+      description: Genera un informe filtrado por fechas y estados para el dashboard.
+      tags:
+        - Reportes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Fecha_Inicio:
+                  type: string
+                  format: date
+                Fecha_Fin:
+                  type: string
+                  format: date
+                Estados:
+                  type: array
+                  items:
+                    type: string
+                    enum: [Aprobada, Rechazada, Pendiente]
+      responses:
+        '200':
+          description: Informe generado exitosamente
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: Error en la solicitud
+        '403':
+          description: No tiene permisos suficientes para acceder a este recurso
+        '500':
+          description: Error interno del servidor
+
+components:
+  schemas:
+    Usuario:
+      type: object
+      properties:
+        ID_User:
+          type: string
+        Nombre:
+          type: string
+        Rol:
+          type: string
+    
+    AuxiliarAsignado:
+      type: object
+      properties:
+        Nombre:
+          type: string
+        ID_User:
+          type: string
+        Estado:
+          type: string
+        Asignaciones:
+          type: array
+          items:
+            type: object
+            properties:
+              ID_Asignacion_Bloque:
+                type: string
+              Bloque_L_V:
+                type: string
+              Bloque_S:
+                type: string
+              Lunes:
+                type: string
+              Martes:
+                type: string
+              Miércoles:
+                type: string
+              Jueves:
+                type: string
+              Viernes:
+                type: string
+              Sábado:
+                type: string
+    AuxiliarNoAsignado:
+      type: object
+      properties:
+        ID_User:
+          type: string
+        Nombre:
+          type: string
+        Estado:
+          type: string
+          
+    ReservaAcademica:
+      type: object
+      properties:
+        ID_Reserva:
+          type: string
+        Nombre:
+          type: string
+        Nombre_Docente:
+          type: string
+        Espacio:
+          type: string
+        Fecha_Inicio:
+          type: string
+          format: date-time
+        Fecha_Fin:
+          type: string
+          format: date-time
+        Estado:
+          type: string
+        Aprobación_Docente:
+          type: string
+        Motivo:
+          type: string
+        Aforo:
+          type: integer
+    ReservaNoAcademica:
+      type: object
+      properties:
+        ID_Reserva:
+          type: string
+        Nombre:
+          type: string
+        Espacio:
+          type: string
+        Fecha_Inicio:
+          type: string
+          format: date-time
+        Fecha_Fin:
+          type: string
+          format: date-time
+        Estado:
+          type: string
+        Motivo:
+          type: string
+        Aforo:
+          type: integer
+    Espacio:
+      type: object
+      properties:
+        ID_Espacio:
+          type: string
+        Campus:
+          type: string
+        Disponibilidad:
+          type: integer
+        Capacidad:
+          type: integer
+        Salon:
+          type: string
+
+
+
+    
