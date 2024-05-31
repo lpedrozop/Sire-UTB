@@ -38,11 +38,6 @@ El proyecto está desplegado y en funcionamiento en [sire.software](http://sire.
 
 ## Créditos
 
-Desarrollado por los estudiantes:
-
-- Lucas M. Pedrozo P.
-- Jose M. Mendoza S.
-- Maycol A. Casadiegos B.
 Este proyecto ha sido desarrollado como parte de nuestra formación en la Universidad Tecnológica de Bolívar. Agradecemos el apoyo y la colaboración durante este proceso.
 
 Desarrolladores:
