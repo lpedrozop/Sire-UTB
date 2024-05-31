@@ -1,0 +1,253 @@
+.assign-cnt {
+  height: 82%;
+  width: 100%;
+}
+
+.assign-cnt h5 {
+  margin: 0;
+  font-size: 20px;
+  margin-bottom: 1.6rem;
+  color: var(--font-color);
+}
+
+.assignment-container {
+  margin: auto;
+  height: 75vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.assignment-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 30vh;
+}
+
+.top-inputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bottom-inputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.assignment-inputs select,
+.assignment-inputs input,
+.assignment-inputs button {
+  margin-bottom: 10px;
+  width: 45%;
+  height: 7vh;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: var(--font-color);
+  background-color: var(--gray-color);
+}
+
+.assignment-inputs button {
+  background-color: var(--blue-color);
+  color: var(--font-color);
+  cursor: pointer;
+}
+
+.assignment-inputs button:hover {
+  background-color: var(--dark-blue-color);
+}
+
+.established-assignments {
+  margin-top: 3cap;
+}
+
+.blocks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 35vh;
+  overflow-y: auto;
+}
+
+.blocks::-webkit-scrollbar {
+  width: 9px;
+}
+
+.blocks::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  height: 140px;
+  width: 210px;
+  text-align: center;
+  align-items: center;
+  background-color: var(--gray-color);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  justify-content: center;
+}
+
+.block h5 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.header-block {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.head-established {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+  text-align: center;
+}
+
+.h4-head {
+  margin: 0;
+  font-size: 18px;
+  color: var(--font-color);
+}
+
+.btn-delete-all {
+  padding: 10px 15px;
+  border: 0;
+  background-color: var(--red-color);
+  color: var(--white-color);
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.btn-delete-all:hover {
+  opacity: 0.7;
+  transition: all 0.5s;
+}
+
+.header-block svg {
+  font-size: 18px;
+  color: var(--red-color);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.header-block svg:hover {
+  opacity: 0.7;
+  transition: all 0.5s;
+}
+
+.head-assigment-time {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.head-assigment-time svg {
+  color: var(--red-color);
+  font-size: 16px;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.head-assigment-time svg:hover {
+  opacity: 0.7;
+  transition: all 0.5s;
+}
+
+.head-assigment-time h6 {
+  margin: 0;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+}
+
+.head-assigment-time p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.btn-assign-aux {
+  padding: 15px;
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  cursor: pointer;
+  width: 30%;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+}
+
+.btn-assign-aux svg {
+  font-size: 22px;
+  color: var(--white-color);
+}
+
+.btn-assign-aux:hover {
+  opacity: 0.7;
+}
+
+.btn-div-cnt {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+.btn-div-cnt h6 {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: var(--font-color);
+}
+
+:where(.css-dev-only-do-not-override-1rqnfsa).ant-picker-outlined {
+  background: var(--gray-color);
+  border: none;
+}
+
+:where(.css-dev-only-do-not-override-1rqnfsa).ant-picker-outlined:hover {
+  background: var(--gray-color);
+  border: none;
+}
+
+:where(.css-dev-only-do-not-override-1rqnfsa).ant-picker-outlined:focus {
+  background: var(--gray-color);
+  border: none;
+}
+
+@media screen and (max-width: 780px) {
+  .head-established {
+    flex-direction: column;
+  }
+
+  .h4-head {
+    margin-bottom: 12px;
+    margin-top: 18px;
+  }
+
+  .btn-assign-aux {
+    width: 100%;
+  }
+}

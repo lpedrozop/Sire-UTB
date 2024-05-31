@@ -1,0 +1,15 @@
+.cnt-asignar {
+  display: flex;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 20px;
+  height: calc(100vh - 121px);
+  box-shadow: var(--box-shadow);
+}
+
+@media screen and (max-width: 780px) {
+  .cnt-asignar {
+    height: 100vh;
+    width: 95%;
+  }
+}

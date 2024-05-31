@@ -1,0 +1,68 @@
+.cnt-auxiliar {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 20px;
+  height: calc(100vh - 121px);
+  box-shadow: var(--box-shadow);
+}
+
+.btn-reporte-reserva {
+  height: 30px;
+  width: 120px;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  color: var(--white-color);
+  cursor: pointer;
+  background-color: var(--primary-color);
+  transition: all 0.5s;
+}
+
+.btns-actions-ys {
+  padding: 7px 10px;
+  width: 50px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  color: var(--white-color);
+  background-color: var(--red-color);
+  cursor: pointer;
+}
+
+.btns-actions-no {
+  padding: 7px 10px;
+  width: 50px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  color: var(--white-color);
+  background-color: var(--green-color);
+  cursor: pointer;
+}
+
+.btn-send-report {
+  padding: 7px 10px;
+  width: 150px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  color: var(--white-color);
+  background-color: var(--green-color);
+  cursor: pointer;
+}
+
+.btns-actions-ys:hover {
+  opacity: 0.7;
+}
+
+.btns-actions-no:hover {
+  opacity: 0.7;
+}
+
+.btn-send-report:hover {
+  opacity: 0.7;
+}

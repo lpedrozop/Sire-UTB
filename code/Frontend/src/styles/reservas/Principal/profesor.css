@@ -1,0 +1,422 @@
+.cnt-profesor {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 20px;
+  height: calc(100vh - 121px);
+  box-shadow: var(--box-shadow);
+}
+
+.header-profesor {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 70%;
+}
+
+.cnt-ms-reservas {
+  width: 66%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-historial-profesores {
+  background-color: #dedede;
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-historial-profesores svg {
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 10px;
+  color: var(--green-color);
+}
+
+.title-historial-profesores h5 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--font-color);
+}
+
+.title-reservas-profesores {
+  background-color: #dedede;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-reservas-profesores svg {
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 10px;
+  color: var(--green-color);
+}
+
+.title-reservas-profesores h5 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--font-color);
+}
+
+.propia-reserva {
+  width: 100%;
+  height: 100%;
+  background-color: var(--gray-color);
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card-propia {
+  width: 27vw;
+  margin-right: 25px;
+  margin-top: 20px;
+  height: 150px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--box-shadow);
+}
+
+.head-propia {
+  margin: 0;
+  height: 40px;
+  background-color: var(--green-color);
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px 5px 0 0;
+}
+
+.head-propia h6 {
+  margin: 0;
+  color: var(--white-color);
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.content-propia {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: var(--white-color);
+  border-radius: 0 0 5px 5px;
+  height: 100%;
+}
+
+.icon-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 18px;
+  align-items: center;
+  text-align: center;
+}
+
+.icon-text div {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.icon-text svg {
+  margin-right: 10px;
+}
+
+.cnt-historial-reservas {
+  width: 32%;
+  background-color: var(--gray-color);
+}
+
+.historial-reservas {
+  width: 100%;
+  height: 92%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.historial-reservas::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 5px;
+}
+
+.historial-reservas::-webkit-scrollbar {
+  width: 7px;
+}
+
+.propia-reserva::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 5px;
+}
+
+.propia-reserva::-webkit-scrollbar {
+  width: 7px;
+}
+
+.card-propia-historial {
+  width: 27vw;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  height: 150px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--box-shadow);
+}
+
+.icon-text-historial {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 15px;
+  align-items: center;
+  text-align: center;
+}
+
+.icon-text-historial div {
+  margin-bottom: 10px;
+}
+
+.content-propia-historial {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10px;
+  background-color: var(--white-color);
+  border-radius: 0 0 5px 5px;
+  height: 100%;
+}
+
+.footer-profesor {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 100%;
+  min-height: 30%;
+  background-color: var(--gray-color);
+}
+
+.reserva-cards {
+  overflow-x: auto;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.reserva-cards::-webkit-scrollbar {
+  height: 7px;
+}
+
+.reserva-cards::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 5px;
+}
+
+.reserva-card-profesor {
+  display: flex;
+  flex-direction: column;
+  height: 160px;
+  width: 350px !important;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  background-color: var(--white-color);
+}
+
+.head-card-reserva {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  border-radius: 5px 5px 0 0;
+  width: 100%;
+  height: 32px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.head-card-reserva p {
+  margin: 0;
+  color: var(--white-color);
+  text-overflow: ellipsis;
+  font-weight: bold;
+}
+
+.foot-card-reserva {
+  padding: 10px 22px;
+}
+
+.foot-card-reserva p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--gray-color-strong);
+}
+
+.foot-card-reserva h6 {
+  margin: 0;
+  font-size: 18px;
+  margin-bottom: 7px;
+  color: var(--font-color);
+}
+
+.cnt-btn-cancelar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-cancelar-reserva {
+  height: 30px;
+  width: 120px;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  color: var(--white-color);
+  cursor: pointer;
+  background-color: var(--red-color);
+  transition: all 0.5s;
+}
+
+.btn-cancelar-reserva:hover {
+  opacity: 0.7;
+  transition: all 0.5s;
+}
+
+.buttons-actions {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.button-action {
+  padding: 5px 10px;
+  width: 100px;
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--white-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.button-action.aprobar {
+  background-color: var(--green-color);
+  margin-right: 10px;
+}
+
+.button-action.rechazar {
+  background-color: var(--red-color);
+}
+
+.button-action.aprobar,
+.button-action.rechazar:hover {
+  opacity: 0.7;
+  transition: all 0.5s;
+}
+
+.cnt-vacio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: var(--gray-color);
+}
+
+.cnt-vacio svg {
+  font-size: 100px;
+  color: var(--gray-color-strong);
+}
+
+.cnt-vacio h5 {
+  color: var(--gray-color-strong);
+}
+
+@media screen and (max-width: 1100px) {
+  .cnt-profesor {
+    flex-direction: column;
+    height: auto;
+    overflow-y: auto;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+  }
+  .header-profesor {
+    margin-top: 155px;
+    flex-direction: column;
+    height: 80vh;
+  }
+
+  .title-historial-profesores {
+    width: 100%;
+  }
+
+  .cnt-ms-reservas {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .cnt-historial-reservas {
+    width: 100%;
+    height: 70vh;
+  }
+
+  .historial-reservas {
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 75%;
+    justify-content: center;
+    overflow-y: auto;
+  }
+
+  .card-propia-historial {
+    margin-right: 15px;
+    min-width: 300px;
+  }
+
+  .footer-profesor {
+    margin-top: 20px;
+  }
+
+  .propia-reserva {
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+  }
+
+  .card-propia {
+    width: auto;
+    margin-right: 15px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+
+  .reserva-cards::-webkit-scrollbar {
+    width: 7px;
+  }
+}

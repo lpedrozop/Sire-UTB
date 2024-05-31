@@ -1,0 +1,141 @@
+.header-info {
+  height: 83vh;
+  width: 100%;
+  z-index: -1;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  background-image: url("../../assets/left-img.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.info-left {
+  display: flex;
+  align-items: baseline;
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.cnt-info-header {
+  margin-top: 5rem;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.cnt-info-header h4 {
+  margin: 0;
+  word-spacing: 0.3ch;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--font-color);
+}
+
+.cnt-info-header p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--gray-color-strong);
+  font-weight: 500;
+}
+
+.btn-formulario {
+  padding: 12px 0;
+  background-color: var(--green-color);
+  color: var(--white-color);
+  font-size: 18px;
+  outline: none;
+  text-decoration: none;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 260px;
+  font-weight: bold;
+  transition: all 0.5s;
+  margin-bottom: 25px;
+  margin-top: 30px;
+}
+
+.btn-formulario:hover {
+  background-color: var(--primary-color);
+  transition: all 0.5s;
+}
+
+@media (max-width: 1515px) {
+  .cnt-info-header {
+    width: 60%;
+  }
+}
+
+@media (max-width: 1263px) {
+  .cnt-info-header {
+    width: 65%;
+  }
+}
+
+@media (max-width: 1168px) {
+  .cnt-info-header {
+    width: 75%;
+  }
+}
+
+@media (max-width: 1020px) {
+  .header-info {
+    width: 100%;
+    flex-direction: column;
+    background-position: 40% center;
+  }
+
+  .info-left {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .cnt-info-header {
+    margin: 0 auto;
+    width: 80%;
+    height: 50%;
+    align-items: flex-start;
+    text-align: left;
+    justify-content: space-evenly;
+  }
+
+  .cnt-info-header h4 {
+    font-size: 3.2rem;
+    margin-bottom: 10px;
+  }
+
+  .cnt-info-header p {
+    text-align: justify;
+    width: 80%;
+  }
+
+  .desing-info {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-info {
+    background-position: 28% center;
+  }
+
+  .cnt-info-header {
+    height: 60%;
+    width: 90%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cnt-info-header h4 {
+    font-size: 2.2rem;
+  }
+
+  .cnt-info-header p {
+    margin-top: 20px;
+    width: 95%;
+  }
+}

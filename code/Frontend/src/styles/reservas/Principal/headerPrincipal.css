@@ -1,0 +1,320 @@
+.head-cnt-page {
+  display: flex;
+  flex-direction: row;
+  width: calc(100vw - 80px);
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--gray-color);
+  background-color: #fff;
+}
+
+.search-head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  margin-left: 30px;
+  color: #c4c4c4;
+}
+
+.search-head svg {
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+.search-head input {
+  border: none;
+  outline: none;
+}
+
+.search-head input:focus {
+  outline: none;
+}
+
+.search-head input::placeholder {
+  color: #c4c4c4;
+  font-size: 14px;
+}
+
+.logo-utb {
+  height: 35px;
+}
+
+.user-head {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 19%;
+}
+
+.user-initials {
+  display: flex;
+  flex-direction: row;
+  margin-right: 40px;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.user-avatar-head {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 10px;
+  background-size: cover;
+}
+
+.user-initials p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--font-color);
+  font-weight: 700;
+}
+
+.li-drawer {
+  list-style: none;
+}
+
+.menu-drawer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.menu-drawer svg {
+  margin-right: 12px;
+  font-size: 18px;
+  color: var(--primary-color);
+}
+
+.menu-drawer p {
+  color: var(--font-color);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btns-actions {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+}
+
+.btn-reports {
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 12px;
+  background-color: var(--green-color);
+  color: var(--white-color);
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.btn-reports:hover {
+  opacity: 0.7;
+  transition: all 0.5s;
+}
+
+.btn-monitoria {
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 12px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.btn-monitoria:hover {
+  opacity: 0.7;
+  transition: all 0.5s;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btn-modal-report {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 13px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.btn-modal-report:hover {
+  opacity: 0.7;
+  transition: all 0.5s;
+}
+
+.cnt-campus-aforo {
+  margin-bottom: 15px;
+}
+
+.cnt-campus-aforo input {
+  width: 150px;
+  margin-right: 20px;
+  outline: none;
+  border: none;
+  background-color: var(--gray-color);
+  color: var(--font-color);
+  font-size: 15px;
+  padding: 10px 15px;
+}
+
+.cnt-campus-aforo select {
+  width: 180px;
+  height: 40px;
+  margin-right: 10px;
+  outline: none;
+  border: none;
+  background-color: var(--gray-color);
+  color: var(--font-color);
+  font-size: 15px;
+  padding: 10px 15px;
+}
+
+.day-range select {
+  width: 180px;
+  height: 40px;
+  margin-right: 10px;
+  outline: none;
+  border: none;
+  background-color: var(--gray-color);
+  color: var(--font-color);
+  font-size: 15px;
+  padding: 10px 15px;
+}
+
+.day-range select {
+  margin-bottom: 15px;
+}
+
+.day-range button {
+  outline: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  transition: all 0.5s;
+  color: var(--font-color);
+  cursor: pointer;
+}
+
+.day-range button:hover {
+  opacity: 0.7;
+  transition: all 0.5s;
+}
+
+.btn-add-schedule {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  border: none;
+  font-size: 20px;
+  color: var(--font-color);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.btn-add-schedule:hover {
+  opacity: 0.7;
+  transition: all 0.5s;
+}
+
+.btn-post-schedule {
+  height: 40px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  border: none;
+  font-size: 15px;
+  padding: 10px 15px;
+  color: var(--font-color);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.btn-post-schedule:hover {
+  opacity: 0.7;
+  transition: all 0.5s;
+}
+
+.head-salones-apl select {
+  height: 40px;
+  margin-right: 10px;
+  outline: none;
+  border: none;
+  background-color: var(--gray-color);
+  color: var(--font-color);
+  font-size: 15px;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+}
+
+.btn-post-horario {
+  outline: none;
+  border: none;
+  padding: 10px 15px;
+  font-size: 15px;
+  transition: all 0.5s;
+  color: var(--font-color);
+  cursor: pointer;
+}
+
+.btn-post-horario:hover {
+  opacity: 0.7;
+  transition: all 0.5s;
+}
+
+@media screen and (max-width: 780px) {
+  .head-cnt-page {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+  }
+
+  .search-head {
+    display: none;
+  }
+
+  .logo-utb {
+    margin-left: 30px;
+  }
+
+  .user-head {
+    width: 17%;
+    justify-content: space-around;
+  }
+
+  .user-avatar-head {
+    width: 50px;
+    height: 50px;
+    margin-right: 0;
+  }
+
+  .user-initials {
+    margin-right: 0;
+    justify-content: center;
+    width: auto;
+  }
+
+  .user-initials p {
+    display: none;
+  }
+}

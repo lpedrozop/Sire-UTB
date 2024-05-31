@@ -1,0 +1,15 @@
+.head-calendario h4 {
+  margin: 0;
+  margin-left: 20px;
+  font-size: 22px;
+  color: var(--font-color);
+}
+
+.picker-calendario {
+  display: flex;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 20px;
+  height: calc(100vh - 121px);
+  box-shadow: var(--box-shadow);
+}

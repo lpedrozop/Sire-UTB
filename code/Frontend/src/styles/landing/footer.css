@@ -1,0 +1,75 @@
+.footer {
+  background-color: var(--font-color);
+  color: #fff;
+  padding: 30px;
+}
+
+.cnt-footer {
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-logo {
+  width: 400px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo h4 {
+  font-size: 22px;
+  margin: 0;
+}
+
+.footer-contact {
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+.footer-contact h4 {
+  font-size: 22px;
+}
+
+.footer-info {
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+.footer-info h4 {
+  font-size: 22px;
+}
+
+.utb-logo-blanco {
+  width: 250px;
+}
+
+.cnt-icono-footer {
+  display: flex;
+  flex-direction: row;
+}
+
+.cnt-icono-footer svg {
+  margin-right: 20px;
+  font-size: 25px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.cnt-icono-footer svg:hover {
+  opacity: 0.7;
+  transition: all 0.5s;
+}
+
+@media (max-width: 790px) {
+  .utb-logo-blanco {
+    width: 190px;
+  }
+}

@@ -1,0 +1,90 @@
+.lf-form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 80vh;
+  justify-content: space-between;
+}
+
+.head-lf-frm {
+  padding: 45px;
+  max-width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.head-lf-frm h5 {
+  margin: 0;
+  max-width: 100%;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 3rem;
+}
+
+.head-lf-frm h3 {
+  margin: 0;
+  max-width: 100%;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 0.3rem;
+}
+
+.head-lf-frm svg {
+  font-size: 84px;
+}
+
+.bt-lf-frm {
+  max-width: 100%;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bt-lf-frm h6 {
+  margin: 0;
+  display: flex;
+  color: var(--gray-color-strong);
+}
+
+.bt-lf-frm p {
+  color: var(--gray-color-strong);
+  margin: 0;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 1300px) {
+  .head-lf-frm {
+    padding: 40px;
+  }
+
+  .head-lf-frm h5 {
+    font-size: 15px;
+  }
+
+  .head-lf-frm h3 {
+    font-size: 25px;
+  }
+
+  .head-lf-frm svg {
+    font-size: 70px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .head-lf-frm h5 {
+    font-size: 15px;
+  }
+
+  .head-lf-frm h3 {
+    font-size: 22px;
+  }
+
+  .head-lf-frm svg {
+    font-size: 50px;
+  }
+}

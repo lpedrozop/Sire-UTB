@@ -1,0 +1,139 @@
+.body-left {
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-body-left {
+  width: 100%;
+  height: 8.3%;
+  background-color: var(--green-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.header-body-left h5 {
+  margin: 0;
+  color: var(--white-color);
+  font-size: 20px;
+}
+
+.content-body-left {
+  width: 100%;
+  height: 91.7%;
+}
+
+.top-body-cnt {
+  width: 100%;
+  height: 20%;
+  border-bottom: 2px solid var(--gray-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.top-body-cnt div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.top-body-cnt div select,
+.top-body-cnt div input {
+  margin-bottom: 7px;
+  width: 55%;
+  height: 5vh;
+  padding: 7px;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: var(--font-color);
+  background-color: var(--gray-color);
+}
+
+.top-body-cnt div select,
+.top-body-cnt div input {
+  border: none;
+}
+
+.btn-bloquear {
+  padding: 7px 25px;
+  border-radius: 5px;
+  border: none;
+  color: var(--white-color);
+  background-color: var(--red-color);
+  cursor: pointer;
+  transition: all 0.5s;
+  font-weight: bold;
+}
+
+.btn-bloquear:hover {
+  opacity: 0.7;
+  transition: all 0.5s;
+}
+
+.bottom-body-cnt {
+  width: 100%;
+  height: 72%;
+  padding: 20px;
+}
+
+.bottom-body-cnt h5 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--font-color);
+}
+
+.cnt-salones-restringidos {
+  width: 90%;
+  height: 100%;
+  margin-top: 15px;
+  overflow: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.cnt-salones-restringidos::-webkit-scrollbar {
+  width: 7px;
+}
+
+.cnt-salones-restringidos::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+}
+
+.card-salones-restringidos {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--red-color);
+  justify-content: space-around;
+  text-align: center;
+  width: 80%;
+  height: 80px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.card-salones-restringidos h6 {
+  margin: 0;
+  color: var(--white-color);
+  font-size: 16px;
+}
+
+.card-salones-restringidos p {
+  margin: 0;
+  color: var(--white-color);
+  font-size: 12px;
+}
+
+@media screen and (max-width: 1100px) {
+  .body-left {
+    display: none;
+  }
+}

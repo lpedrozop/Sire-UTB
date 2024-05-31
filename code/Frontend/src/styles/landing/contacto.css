@@ -1,0 +1,49 @@
+.cnt-contacto {
+  height: 55vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-image: url("../../assets/utb-fondo.webp");
+}
+
+.cnt-contenido-contacto {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(5, 160, 160, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cnt-contenido-contacto p {
+  margin: 0;
+  color: var(--white-color);
+  font-size: 21px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.cnt-contenido-contacto h4 {
+  margin: 0;
+  color: var(--white-color);
+  font-size: 48px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+@media (max-width: 790px) {
+  .cnt-contacto {
+    height: 40vh;
+  }
+
+  .cnt-contenido-contacto p {
+    font-size: 14px;
+    width: 94%;
+  }
+
+  .cnt-contenido-contacto h4 {
+    font-size: 32px;
+  }
+}

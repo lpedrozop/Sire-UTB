@@ -1,0 +1,49 @@
+/* CSS */
+.loader-container {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(28, 29, 31, 0.5); /* Transparencia de fondo */
+}
+
+.loader {
+  width: 40px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, var(--primary-color) 94%, #0000),
+    radial-gradient(farthest-side, var(--green-color) 94%, #0000),
+    radial-gradient(farthest-side, var(--gray-color-strong) 94%, #0000),
+    radial-gradient(farthest-side, var(--font-color) 94%, #0000), #ed303c;
+  background-size: 105% 105%;
+  background-repeat: no-repeat;
+  animation: l5 2s infinite;
+}
+
+@keyframes l5 {
+  0% {
+    background-position: 50% -50px, -40px 50%, 50% calc(100% + 50px),
+      calc(100% + 50px) 50%;
+  }
+  20%,
+  25% {
+    background-position: 50% -50px, -50px 50%, 50% calc(100% + 50px), 50% 50%;
+  }
+  45%,
+  50% {
+    background-position: 50% -50px, -50px 50%, 50% 50%, 50% 50%;
+  }
+  75%,
+  75% {
+    background-position: 50% -50px, 50% 50%, 50% 50%, 50% 50%;
+  }
+  95%,
+  100% {
+    background-position: 50% 50%, 50% 50%, 50% 50%, 50% 50%;
+  }
+}

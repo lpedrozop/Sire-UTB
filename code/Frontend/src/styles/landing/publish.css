@@ -1,0 +1,15 @@
+.cnt-publish {
+  width: 100%;
+  height: 10vh;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cnt-publish h5 {
+  margin: 0;
+  font-size: 17px;
+  color: var(--white-color);
+  font-weight: 500;
+}
