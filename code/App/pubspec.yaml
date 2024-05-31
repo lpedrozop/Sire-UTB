@@ -1,0 +1,51 @@
+name: uloginazure
+description: "App reservas UTB"
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  http: ^1.2.1
+  shared_preferences: ^2.2.2
+  azure_ad_authentication: ^1.0.5
+  date_picker_timeline: ^1.2.5
+  flutter_native_splash: ^2.3.13
+  flutter_custom_clippers: ^2.1.0
+  provider: ^5.0.0
+  easy_stepper: ^0.8.3
+  dio: ^5.0.2
+  jwt_decoder: ^2.0.1
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.0
+
+flutter:
+  assets:
+    - assets/
+
+  uses-material-design: true
+
+flutter_native_splash:
+  color: "#f6f6f6"
+  image: assets/utb.png
+  color_dark: "#f6f6f6"
+  image_dark: assets/utb.png
+
+  android_12:
+    image: assets/utb.png
+    icon_background_color: "#f6f6f6"
+    image_dark: assets/utb.png
+    icon_background_color_dark: "#f6f6f6"
+
+  web: true
